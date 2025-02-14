@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝕄𝕠𝕞𝕖𝕟𝕥 💖</title>
+    <style>
+        body {
+            text-align: center;
+            background: #fee2e9;
+            font-family: 'Mali', cursive;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #444;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        video {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-container {
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #ff66a3;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #ff3385;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> -- --- -- . -. - 💖 </h1>
+    <p>Some moments are too beautiful to put into words, so let's relive them together. 🎥💕</p>
+
+    <div class="video-container">
+        <video id="videoPlayer" controls>
+            <source id="videoSource" src="love/VID_20241215_112212_142.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="btn-container">
+        <button class="btn" onclick="prevVideo()">⬅ Previous</button>
+        <button class="btn" onclick="nextVideo()">Next ➡</button>
+    </div>
+
+    <script>
+        const videos = ["love/VID_20241215_112212_142.mp4", "love/VID_20250102_090514_759.mp4", "love/VID_20250112_093509_062.mp4"];
+        let currentIndex = 0;
+
+        function updateVideo() {
+            document.getElementById("videoSource").src = videos[currentIndex];
+            document.getElementById("videoPlayer").load();
+        }
+
+        function nextVideo() {
+            if (currentIndex < videos.length - 1) {
+                currentIndex++;
+                updateVideo();
+            }
+        }
+
+        function prevVideo() {
+            if (currentIndex === 0) {
+                window.location.href = "index.html"; // กลับไปหน้าหลัก
+            } else {
+                currentIndex--;
+                updateVideo();
+            }
+        }
+    </script>
+</body>
+
+</html>
